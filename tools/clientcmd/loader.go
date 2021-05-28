@@ -25,24 +25,23 @@ import (
 	goruntime "runtime"
 	"strings"
 
-	"github.com/imdario/mergo"
 	"k8s.io/klog/v2"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
-	restclient "k8s.io/client-go/rest"
-	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
-	clientcmdlatest "k8s.io/client-go/tools/clientcmd/api/latest"
-	"k8s.io/client-go/util/homedir"
+	restclient "github.com/Angus-F/client-go/rest"
+	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
+	clientcmdlatest "github.com/Angus-F/client-go/tools/clientcmd/api/latest"
+	"github.com/Angus-F/client-go/util/homedir"
 )
 
 const (
 	RecommendedConfigPathFlag   = "kubeconfig"
 	RecommendedConfigPathEnvVar = "KUBECONFIG"
-	RecommendedHomeDir          = ".kube"
-	RecommendedFileName         = "config"
+	RecommendedHomeDir          = ".kube/ConfigsToChoose"
 	RecommendedSchemaName       = "schema"
+	RecommendedFileName         = "kubernetes"
 )
 
 var (
@@ -66,6 +65,7 @@ func currentMigrationRules() map[string]string {
 	}
 }
 
+
 type ClientConfigLoader interface {
 	ConfigAccess
 	// IsDefaultConfig returns true if the returned config matches the defaults.
@@ -83,6 +83,9 @@ type ClientConfigGetter struct {
 // ClientConfigGetter implements the ClientConfigLoader interface.
 var _ ClientConfigLoader = &ClientConfigGetter{}
 
+func (g * ClientConfigGetter) SetClusterName(clusterName string) {
+
+}
 func (g *ClientConfigGetter) Load() (*clientcmdapi.Config, error) {
 	return g.kubeconfigGetter()
 }
@@ -133,7 +136,6 @@ type ClientConfigLoadingRules struct {
 
 // ClientConfigLoadingRules implements the ClientConfigLoader interface.
 var _ ClientConfigLoader = &ClientConfigLoadingRules{}
-
 // NewDefaultClientConfigLoadingRules returns a ClientConfigLoadingRules object with default fields filled in.  You are not required to
 // use this constructor
 func NewDefaultClientConfigLoadingRules() *ClientConfigLoadingRules {
@@ -187,67 +189,41 @@ func (rules *ClientConfigLoadingRules) Load() (*clientcmdapi.Config, error) {
 			return nil, err
 		}
 		kubeConfigFiles = append(kubeConfigFiles, rules.ExplicitPath)
-
 	} else {
 		kubeConfigFiles = append(kubeConfigFiles, rules.Precedence...)
 	}
-
 	kubeconfigs := []*clientcmdapi.Config{}
-	// read and cache the config files so that we only look at them once
+
 	for _, filename := range kubeConfigFiles {
 		if len(filename) == 0 {
 			// no work to do
 			continue
 		}
-
-		config, err := LoadFromFile(filename)
-
-		if os.IsNotExist(err) {
-			// skip missing files
-			// Add to the missing list to produce a warning
-			missingList = append(missingList, filename)
-			continue
-		}
-
-		if err != nil {
-			errlist = append(errlist, fmt.Errorf("error loading config file \"%s\": %v", filename, err))
-			continue
-		}
-
-		kubeconfigs = append(kubeconfigs, config)
 	}
 
+	RealPath := filepath.Join(RecommendedConfigDir, RecommendedFileName)
+	config, err := LoadFromFile(RealPath)
+	if os.IsNotExist(err) {
+		// skip missing files
+		// Add to the missing list to produce a warning
+		missingList = append(missingList, RecommendedFileName)
+	}
+
+	if err != nil {
+		errlist = append(errlist, fmt.Errorf("error loading config file \"%s\": %v", RecommendedFileName, err))
+	}
+	kubeconfigs = append(kubeconfigs, config)
 	if rules.WarnIfAllMissing && len(missingList) > 0 && len(kubeconfigs) == 0 {
 		klog.Warningf("Config not found: %s", strings.Join(missingList, ", "))
 	}
 
-	// first merge all of our maps
-	mapConfig := clientcmdapi.NewConfig()
-
-	for _, kubeconfig := range kubeconfigs {
-		mergo.Merge(mapConfig, kubeconfig, mergo.WithOverride)
-	}
-
-	// merge all of the struct values in the reverse order so that priority is given correctly
-	// errors are not added to the list the second time
-	nonMapConfig := clientcmdapi.NewConfig()
-	for i := len(kubeconfigs) - 1; i >= 0; i-- {
-		kubeconfig := kubeconfigs[i]
-		mergo.Merge(nonMapConfig, kubeconfig, mergo.WithOverride)
-	}
-
-	// since values are overwritten, but maps values are not, we can merge the non-map config on top of the map config and
-	// get the values we expect.
-	config := clientcmdapi.NewConfig()
-	mergo.Merge(config, mapConfig, mergo.WithOverride)
-	mergo.Merge(config, nonMapConfig, mergo.WithOverride)
-
 	if rules.ResolvePaths() {
-		if err := ResolveLocalPaths(config); err != nil {
+		if err := ResolveLocalPaths(kubeconfigs[0]); err != nil {
 			errlist = append(errlist, err)
 		}
 	}
-	return config, utilerrors.NewAggregate(errlist)
+
+	return kubeconfigs[0], utilerrors.NewAggregate(errlist)
 }
 
 // Migrate uses the MigrationRules map.  If a destination file is not present, then the source file is checked.
@@ -361,11 +337,8 @@ func (rules *ClientConfigLoadingRules) IsDefaultConfig(config *restclient.Config
 
 // LoadFromFile takes a filename and deserializes the contents into Config object
 func LoadFromFile(filename string) (*clientcmdapi.Config, error) {
-	kubeconfigBytes, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return nil, err
-	}
-	config, err := Load(kubeconfigBytes)
+	KubeConfigBytes, err:= ioutil.ReadFile(filename)
+	config, err := Load(KubeConfigBytes)
 	if err != nil {
 		return nil, err
 	}
