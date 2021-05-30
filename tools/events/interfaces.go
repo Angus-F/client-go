@@ -19,7 +19,7 @@ package events
 import (
 	eventsv1 "k8s.io/api/events/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/client-go/tools/record"
+	"github.com/Angus-F/client-go/tools/record"
 )
 
 // EventRecorder knows how to record events on behalf of an EventSource.

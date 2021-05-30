@@ -22,7 +22,7 @@ import (
 	v1beta1 "k8s.io/api/events/v1beta1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/client-go/tools/cache"
+	"github.com/Angus-F/client-go/tools/cache"
 )
 
 // EventLister helps list Events.

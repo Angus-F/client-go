@@ -30,7 +30,7 @@ import (
 
 	"golang.org/x/oauth2"
 	"k8s.io/apimachinery/pkg/util/net"
-	restclient "k8s.io/client-go/rest"
+	restclient "github.com/Angus-F/client-go/rest"
 	"k8s.io/klog/v2"
 )
 

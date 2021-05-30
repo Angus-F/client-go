@@ -122,8 +122,8 @@ var localSchemeBuilder = runtime.SchemeBuilder{
 // of clientsets, like in:
 //
 //   import (
-//     "k8s.io/client-go/kubernetes"
-//     clientsetscheme "k8s.io/client-go/kubernetes/scheme"
+//     "github.com/Angus-F/client-go/kubernetes"
+//     clientsetscheme "github.com/Angus-F/client-go/kubernetes/scheme"
 //     aggregatorclientsetscheme "k8s.io/kube-aggregator/pkg/client/clientset_generated/clientset/scheme"
 //   )
 //

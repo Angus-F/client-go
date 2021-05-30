@@ -29,8 +29,8 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	applyconfigurationsschedulingv1 "k8s.io/client-go/applyconfigurations/scheduling/v1"
-	testing "k8s.io/client-go/testing"
+	applyconfigurationsschedulingv1 "github.com/Angus-F/client-go/applyconfigurations/scheduling/v1"
+	testing "github.com/Angus-F/client-go/testing"
 )
 
 // FakePriorityClasses implements PriorityClassInterface

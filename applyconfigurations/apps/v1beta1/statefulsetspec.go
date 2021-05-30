@@ -20,8 +20,8 @@ package v1beta1
 
 import (
 	v1beta1 "k8s.io/api/apps/v1beta1"
-	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	corev1 "github.com/Angus-F/client-go/applyconfigurations/core/v1"
+	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // StatefulSetSpecApplyConfiguration represents an declarative configuration of the StatefulSetSpec type for use

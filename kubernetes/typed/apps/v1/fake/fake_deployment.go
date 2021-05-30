@@ -30,9 +30,9 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	applyconfigurationsappsv1 "k8s.io/client-go/applyconfigurations/apps/v1"
-	applyconfigurationsautoscalingv1 "k8s.io/client-go/applyconfigurations/autoscaling/v1"
-	testing "k8s.io/client-go/testing"
+	applyconfigurationsappsv1 "github.com/Angus-F/client-go/applyconfigurations/apps/v1"
+	applyconfigurationsautoscalingv1 "github.com/Angus-F/client-go/applyconfigurations/autoscaling/v1"
+	testing "github.com/Angus-F/client-go/testing"
 )
 
 // FakeDeployments implements DeploymentInterface

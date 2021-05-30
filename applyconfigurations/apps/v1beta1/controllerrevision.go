@@ -24,8 +24,8 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	types "k8s.io/apimachinery/pkg/types"
 	managedfields "k8s.io/apimachinery/pkg/util/managedfields"
-	internal "k8s.io/client-go/applyconfigurations/internal"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	internal "github.com/Angus-F/client-go/applyconfigurations/internal"
+	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // ControllerRevisionApplyConfiguration represents an declarative configuration of the ControllerRevision type for use

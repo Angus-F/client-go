@@ -19,7 +19,7 @@ package testing
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
-	restclient "k8s.io/client-go/rest"
+	restclient "github.com/Angus-F/client-go/rest"
 )
 
 type FakeClient interface {

@@ -33,8 +33,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/serializer/streaming"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/watch"
-	restclient "k8s.io/client-go/rest"
-	restclientwatch "k8s.io/client-go/rest/watch"
+	restclient "github.com/Angus-F/client-go/rest"
+	restclientwatch "github.com/Angus-F/client-go/rest/watch"
 )
 
 func getJSON(version, kind, name string) []byte {

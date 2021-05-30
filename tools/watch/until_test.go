@@ -30,8 +30,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/apimachinery/pkg/watch"
-	fakeclient "k8s.io/client-go/kubernetes/fake"
-	"k8s.io/client-go/tools/cache"
+	fakeclient "github.com/Angus-F/client-go/kubernetes/fake"
+	"github.com/Angus-F/client-go/tools/cache"
 )
 
 type fakePod struct {

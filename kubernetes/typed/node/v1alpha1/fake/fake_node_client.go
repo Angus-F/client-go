@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	v1alpha1 "k8s.io/client-go/kubernetes/typed/node/v1alpha1"
-	rest "k8s.io/client-go/rest"
-	testing "k8s.io/client-go/testing"
+	v1alpha1 "github.com/Angus-F/client-go/kubernetes/typed/node/v1alpha1"
+	rest "github.com/Angus-F/client-go/rest"
+	testing "github.com/Angus-F/client-go/testing"
 )
 
 type FakeNodeV1alpha1 struct {

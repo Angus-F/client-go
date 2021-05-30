@@ -27,10 +27,10 @@ import (
 	policyv1 "k8s.io/api/policy/v1"
 	policyv1beta1 "k8s.io/api/policy/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/kubernetes/scheme"
-	restclient "k8s.io/client-go/rest"
-	fakerest "k8s.io/client-go/rest/fake"
-	core "k8s.io/client-go/testing"
+	"github.com/Angus-F/client-go/kubernetes/scheme"
+	restclient "github.com/Angus-F/client-go/rest"
+	fakerest "github.com/Angus-F/client-go/rest/fake"
+	core "github.com/Angus-F/client-go/testing"
 )
 
 func (c *FakePods) Bind(ctx context.Context, binding *v1.Binding, opts metav1.CreateOptions) error {

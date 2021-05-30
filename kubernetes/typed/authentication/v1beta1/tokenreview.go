@@ -23,8 +23,8 @@ import (
 
 	v1beta1 "k8s.io/api/authentication/v1beta1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	scheme "k8s.io/client-go/kubernetes/scheme"
-	rest "k8s.io/client-go/rest"
+	scheme "github.com/Angus-F/client-go/kubernetes/scheme"
+	rest "github.com/Angus-F/client-go/rest"
 )
 
 // TokenReviewsGetter has a method to return a TokenReviewInterface.

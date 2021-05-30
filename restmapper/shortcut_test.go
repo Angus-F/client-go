@@ -26,9 +26,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/version"
-	"k8s.io/client-go/discovery"
-	restclient "k8s.io/client-go/rest"
-	"k8s.io/client-go/rest/fake"
+	"github.com/Angus-F/client-go/discovery"
+	restclient "github.com/Angus-F/client-go/rest"
+	"github.com/Angus-F/client-go/rest/fake"
 )
 
 func TestReplaceAliases(t *testing.T) {

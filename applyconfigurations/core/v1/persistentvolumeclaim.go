@@ -23,8 +23,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	managedfields "k8s.io/apimachinery/pkg/util/managedfields"
-	internal "k8s.io/client-go/applyconfigurations/internal"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	internal "github.com/Angus-F/client-go/applyconfigurations/internal"
+	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // PersistentVolumeClaimApplyConfiguration represents an declarative configuration of the PersistentVolumeClaim type for use

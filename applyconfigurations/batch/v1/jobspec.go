@@ -20,8 +20,8 @@ package v1
 
 import (
 	batchv1 "k8s.io/api/batch/v1"
-	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	corev1 "github.com/Angus-F/client-go/applyconfigurations/core/v1"
+	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // JobSpecApplyConfiguration represents an declarative configuration of the JobSpec type for use

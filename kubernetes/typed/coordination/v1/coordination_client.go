@@ -20,8 +20,8 @@ package v1
 
 import (
 	v1 "k8s.io/api/coordination/v1"
-	"k8s.io/client-go/kubernetes/scheme"
-	rest "k8s.io/client-go/rest"
+	"github.com/Angus-F/client-go/kubernetes/scheme"
+	rest "github.com/Angus-F/client-go/rest"
 )
 
 type CoordinationV1Interface interface {

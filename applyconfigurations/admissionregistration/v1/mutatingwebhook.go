@@ -20,7 +20,7 @@ package v1
 
 import (
 	admissionregistrationv1 "k8s.io/api/admissionregistration/v1"
-	metav1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	metav1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // MutatingWebhookApplyConfiguration represents an declarative configuration of the MutatingWebhook type for use

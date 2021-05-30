@@ -27,8 +27,8 @@ import (
 	"k8s.io/apimachinery/pkg/util/clock"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/watch"
-	"k8s.io/client-go/tools/record/util"
-	"k8s.io/client-go/tools/reference"
+	"github.com/Angus-F/client-go/tools/record/util"
+	"github.com/Angus-F/client-go/tools/reference"
 	"k8s.io/klog/v2"
 )
 

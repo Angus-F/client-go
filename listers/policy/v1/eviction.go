@@ -22,7 +22,7 @@ import (
 	v1 "k8s.io/api/policy/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/client-go/tools/cache"
+	"github.com/Angus-F/client-go/tools/cache"
 )
 
 // EvictionLister helps list Evictions.

@@ -24,7 +24,7 @@ import (
 
 	"k8s.io/apimachinery/pkg/util/httpstream"
 	"k8s.io/apimachinery/pkg/util/httpstream/spdy"
-	restclient "k8s.io/client-go/rest"
+	restclient "github.com/Angus-F/client-go/rest"
 )
 
 // Upgrader validates a response from the server after a SPDY upgrade.

@@ -22,9 +22,9 @@ import (
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/sets"
-	clientauthenticationv1alpha1 "k8s.io/client-go/pkg/apis/clientauthentication/v1alpha1"
-	clientauthenticationv1beta1 "k8s.io/client-go/pkg/apis/clientauthentication/v1beta1"
-	clientcmdv1 "k8s.io/client-go/tools/clientcmd/api/v1"
+	clientauthenticationv1alpha1 "github.com/Angus-F/client-go/pkg/apis/clientauthentication/v1alpha1"
+	clientauthenticationv1beta1 "github.com/Angus-F/client-go/pkg/apis/clientauthentication/v1beta1"
+	clientcmdv1 "github.com/Angus-F/client-go/tools/clientcmd/api/v1"
 )
 
 // TestV1beta1ClusterTypesAreSynced ensures that clientauthenticationv1beta1.Cluster stays in sync

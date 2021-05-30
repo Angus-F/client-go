@@ -1,5 +1,5 @@
 {
-	"ImportPath": "k8s.io/client-go",
+	"ImportPath": "github.com/Angus-F/client-go",
 	"GoVersion": "unknown",
 	"GodepVersion": "gen-godeps",
 	"Packages": [

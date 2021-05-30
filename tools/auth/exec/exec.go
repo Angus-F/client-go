@@ -27,10 +27,10 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/runtime/serializer"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
-	"k8s.io/client-go/pkg/apis/clientauthentication"
-	"k8s.io/client-go/pkg/apis/clientauthentication/v1alpha1"
-	"k8s.io/client-go/pkg/apis/clientauthentication/v1beta1"
-	"k8s.io/client-go/rest"
+	"github.com/Angus-F/client-go/pkg/apis/clientauthentication"
+	"github.com/Angus-F/client-go/pkg/apis/clientauthentication/v1alpha1"
+	"github.com/Angus-F/client-go/pkg/apis/clientauthentication/v1beta1"
+	"github.com/Angus-F/client-go/rest"
 )
 
 const execInfoEnv = "KUBERNETES_EXEC_INFO"

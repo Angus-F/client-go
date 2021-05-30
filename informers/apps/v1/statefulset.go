@@ -26,10 +26,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
-	internalinterfaces "k8s.io/client-go/informers/internalinterfaces"
-	kubernetes "k8s.io/client-go/kubernetes"
-	v1 "k8s.io/client-go/listers/apps/v1"
-	cache "k8s.io/client-go/tools/cache"
+	internalinterfaces "github.com/Angus-F/client-go/informers/internalinterfaces"
+	kubernetes "github.com/Angus-F/client-go/kubernetes"
+	v1 "github.com/Angus-F/client-go/listers/apps/v1"
+	cache "github.com/Angus-F/client-go/tools/cache"
 )
 
 // StatefulSetInformer provides access to a shared informer and lister for
