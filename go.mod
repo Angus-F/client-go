@@ -12,6 +12,7 @@ require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e
 	github.com/golang/protobuf v1.4.3
+	github.com/google/btree v1.0.1 // indirect
 	github.com/google/go-cmp v0.5.4
 	github.com/google/gofuzz v1.1.0
 	github.com/google/uuid v1.1.2
@@ -28,7 +29,6 @@ require (
 	google.golang.org/protobuf v1.25.0
 	k8s.io/api v0.21.1
 	k8s.io/apimachinery v0.21.1
-	github.com/Angus-F/client-go v0.21.1
 	k8s.io/klog/v2 v2.9.0
 	k8s.io/utils v0.0.0-20201110183641-67b214c5f920
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.1
