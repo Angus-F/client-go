@@ -41,7 +41,7 @@ const (
 	RecommendedConfigPathEnvVar = "KUBECONFIG"
 	RecommendedHomeDir          = ".kube/ConfigsToChoose"
 	RecommendedSchemaName       = "schema"
-	RecommendedFileName         = "kubernetes"
+	RecommendedFileName         = "UsingConfig"
 )
 
 var (

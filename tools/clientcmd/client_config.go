@@ -651,6 +651,7 @@ func BuildConfigFromKubeconfigGetter(masterUrl string, kubeconfigGetter Kubeconf
 		&ConfigOverrides{ClusterInfo: clientcmdapi.Cluster{Server: masterUrl}})
 	return cc.ClientConfig()
 }
+
 /**
 func NewClientConfigFromBytesWithConfigFlags(configBytes []byte, f cmdutil.Factory) (ClientConfig, error) {
 	config, err := Load(configBytes)
