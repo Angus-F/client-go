@@ -25,8 +25,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/types"
-	restclient "k8s.io/client-go/rest"
-	"k8s.io/client-go/util/flowcontrol"
+	restclient "github.com/Angus-F/client-go/rest"
+	"github.com/Angus-F/client-go/util/flowcontrol"
 )
 
 // CreateHTTPClient creates an http.Client that will invoke the provided roundTripper func

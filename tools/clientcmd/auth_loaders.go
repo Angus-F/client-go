@@ -25,7 +25,7 @@ import (
 
 	"golang.org/x/term"
 
-	clientauth "k8s.io/client-go/tools/auth"
+	clientauth "github.com/Angus-F/client-go/tools/auth"
 )
 
 // AuthLoaders are used to build clientauth.Info objects.

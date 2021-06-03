@@ -27,8 +27,8 @@ import (
 	utilnet "k8s.io/apimachinery/pkg/util/net"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/util/wait"
-	"k8s.io/client-go/util/connrotation"
-	"k8s.io/client-go/util/workqueue"
+	"github.com/Angus-F/client-go/util/connrotation"
+	"github.com/Angus-F/client-go/util/workqueue"
 	"k8s.io/klog/v2"
 )
 

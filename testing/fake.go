@@ -23,7 +23,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
-	restclient "k8s.io/client-go/rest"
+	restclient "github.com/Angus-F/client-go/rest"
 )
 
 // Fake implements client.Interface. Meant to be embedded into a struct to get

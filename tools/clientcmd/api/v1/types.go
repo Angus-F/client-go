@@ -218,7 +218,7 @@ type ExecConfig struct {
 	// ProvideClusterInfo determines whether or not to provide cluster information,
 	// which could potentially contain very large CA data, to this exec plugin as a
 	// part of the KUBERNETES_EXEC_INFO environment variable. By default, it is set
-	// to false. Package k8s.io/client-go/tools/auth/exec provides helper methods for
+	// to false. Package github.com/Angus-F/client-go/tools/auth/exec provides helper methods for
 	// reading this environment variable.
 	ProvideClusterInfo bool `json:"provideClusterInfo"`
 }

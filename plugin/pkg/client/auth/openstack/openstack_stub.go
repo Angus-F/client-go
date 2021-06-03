@@ -19,7 +19,7 @@ package openstack
 import (
 	"errors"
 
-	"k8s.io/client-go/rest"
+	"github.com/Angus-F/client-go/rest"
 	"k8s.io/klog/v2"
 )
 

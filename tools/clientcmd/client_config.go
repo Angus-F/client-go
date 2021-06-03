@@ -26,9 +26,9 @@ import (
 	"strings"
 	"unicode"
 
-	restclient "k8s.io/client-go/rest"
-	clientauth "k8s.io/client-go/tools/auth"
-	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
+	restclient "github.com/Angus-F/client-go/rest"
+	clientauth "github.com/Angus-F/client-go/tools/auth"
+	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
 	"k8s.io/klog/v2"
 
 	"github.com/imdario/mergo"

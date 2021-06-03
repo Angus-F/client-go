@@ -28,9 +28,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	admissionregistrationv1 "k8s.io/client-go/applyconfigurations/admissionregistration/v1"
-	scheme "k8s.io/client-go/kubernetes/scheme"
-	rest "k8s.io/client-go/rest"
+	admissionregistrationv1 "github.com/Angus-F/client-go/applyconfigurations/admissionregistration/v1"
+	scheme "github.com/Angus-F/client-go/kubernetes/scheme"
+	rest "github.com/Angus-F/client-go/rest"
 )
 
 // MutatingWebhookConfigurationsGetter has a method to return a MutatingWebhookConfigurationInterface.

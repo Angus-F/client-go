@@ -28,7 +28,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/httpstream/spdy"
 	remotecommandconsts "k8s.io/apimachinery/pkg/util/remotecommand"
 	"k8s.io/apimachinery/pkg/util/wait"
-	"k8s.io/client-go/rest"
+	"github.com/Angus-F/client-go/rest"
 	"net/http"
 	"net/http/httptest"
 	"net/url"

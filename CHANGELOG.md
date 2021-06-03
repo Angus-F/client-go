@@ -3,14 +3,14 @@ automation effort is tracked in
 https://github.com/kubernetes/test-infra/issues/5843.
 
 Changes in `k8s.io/api` and `k8s.io/apimachinery` are mentioned here
-because `k8s.io/client-go` depends on them.
+because `github.com/Angus-F/client-go` depends on them.
 
 # v10.0.0
 
 **Breaking Changes:**
 
 * Action required: client-go will no longer have bootstrap
-(`k8s.io/client-go/tools/bootstrap`) related code. Any reference to it will
+(`github.com/Angus-F/client-go/tools/bootstrap`) related code. Any reference to it will
 break. Please redirect all references to `k8s.io/bootstrap` instead.
 ([#67356](https://github.com/kubernetes/kubernetes/pull/67356))
 
@@ -23,7 +23,7 @@ to allow different kind of private keys (for example: ecdsa).
 and with this, no-verb scale clients have been removed.
 ([#70437](https://github.com/kubernetes/kubernetes/pull/70437))
 
-* `k8s.io/client-go/util/cert/triple` package has been removed.
+* `github.com/Angus-F/client-go/util/cert/triple` package has been removed.
 ([#70966](https://github.com/kubernetes/kubernetes/pull/70966))
 
 **New Features:**
@@ -629,7 +629,7 @@ The kinds have changed completely and old code must be ported to `admissionregis
 
 **New Features:**
 
-* Certificate manager was moved from kubelet to `k8s.io/client-go/util/certificates`
+* Certificate manager was moved from kubelet to `github.com/Angus-F/client-go/util/certificates`
 
    * [https://github.com/kubernetes/kubernetes/pull/49654](https://github.com/kubernetes/kubernetes/pull/49654)
 
@@ -649,7 +649,7 @@ The kinds have changed completely and old code must be ported to `admissionregis
 
     * [https://github.com/kubernetes/kubernetes/pull/55272](https://github.com/kubernetes/kubernetes/pull/55272)
 
-* [k8s.io/apimachinery] Added polymorphic scale client in `k8s.io/client-go/scale`, which supports scaling of resources in arbitrary API groups
+* [k8s.io/apimachinery] Added polymorphic scale client in `github.com/Angus-F/client-go/scale`, which supports scaling of resources in arbitrary API groups
 
     * [https://github.com/kubernetes/kubernetes/pull/53743](https://github.com/kubernetes/kubernetes/pull/53743)
 
@@ -751,7 +751,7 @@ Bug fix: picked up a security fix [kubernetes/kubernetes#53443](https://github.c
 
    * [https://github.com/kubernetes/kubernetes/pull/49370](https://github.com/kubernetes/kubernetes/pull/49370)
 
-* The generic RESTClient type (`k8s.io/client-go/rest`) no longer exposes `LabelSelectorParam` or `FieldSelectorParam` methods - use `VersionedParams` with `metav1.ListOptions` instead. The `UintParam` method has been removed. The `timeout` parameter will no longer cause an error when using `Param()`.
+* The generic RESTClient type (`github.com/Angus-F/client-go/rest`) no longer exposes `LabelSelectorParam` or `FieldSelectorParam` methods - use `VersionedParams` with `metav1.ListOptions` instead. The `UintParam` method has been removed. The `timeout` parameter will no longer cause an error when using `Param()`.
 
    * [https://github.com/kubernetes/kubernetes/pull/48991](https://github.com/kubernetes/kubernetes/pull/48991)
 
@@ -787,7 +787,7 @@ No significant changes since v4.0.0-beta.0.
 
 * Added several new examples and reorganized client-go/examples
 
-    * [Related PRs](https://github.com/kubernetes/kubernetes/commits/release-1.7/staging/src/k8s.io/client-go/examples)
+    * [Related PRs](https://github.com/kubernetes/kubernetes/commits/release-1.7/staging/src/github.com/Angus-F/client-go/examples)
 
 **API changes:**
 
@@ -838,7 +838,7 @@ Bug fixes:
 
 # v3.0.0-beta.0
 
-* Added dependency on k8s.io/apimachinery. The impacts include changing import path of API objects like `ListOptions` from `k8s.io/client-go/pkg/api/v1` to `k8s.io/apimachinery/pkg/apis/meta/v1`.
+* Added dependency on k8s.io/apimachinery. The impacts include changing import path of API objects like `ListOptions` from `github.com/Angus-F/client-go/pkg/api/v1` to `k8s.io/apimachinery/pkg/apis/meta/v1`.
 * Added generated listers (listers/) and informers (informers/)
 * Kubernetes API changes:
   * Added client support for:

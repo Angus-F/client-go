@@ -19,7 +19,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	internalinterfaces "k8s.io/client-go/informers/internalinterfaces"
+	internalinterfaces "github.com/Angus-F/client-go/informers/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

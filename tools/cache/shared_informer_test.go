@@ -29,7 +29,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/clock"
 	"k8s.io/apimachinery/pkg/util/sets"
 	"k8s.io/apimachinery/pkg/util/wait"
-	fcache "k8s.io/client-go/tools/cache/testing"
+	fcache "github.com/Angus-F/client-go/tools/cache/testing"
 )
 
 type testListener struct {

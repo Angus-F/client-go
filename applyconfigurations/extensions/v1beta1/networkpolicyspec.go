@@ -20,7 +20,7 @@ package v1beta1
 
 import (
 	extensionsv1beta1 "k8s.io/api/extensions/v1beta1"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // NetworkPolicySpecApplyConfiguration represents an declarative configuration of the NetworkPolicySpec type for use

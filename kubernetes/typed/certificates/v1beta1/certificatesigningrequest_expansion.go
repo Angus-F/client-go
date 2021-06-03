@@ -21,7 +21,7 @@ import (
 
 	certificates "k8s.io/api/certificates/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	scheme "k8s.io/client-go/kubernetes/scheme"
+	scheme "github.com/Angus-F/client-go/kubernetes/scheme"
 )
 
 type CertificateSigningRequestExpansion interface {

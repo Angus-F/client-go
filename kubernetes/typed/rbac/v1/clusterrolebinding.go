@@ -28,9 +28,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	rbacv1 "k8s.io/client-go/applyconfigurations/rbac/v1"
-	scheme "k8s.io/client-go/kubernetes/scheme"
-	rest "k8s.io/client-go/rest"
+	rbacv1 "github.com/Angus-F/client-go/applyconfigurations/rbac/v1"
+	scheme "github.com/Angus-F/client-go/kubernetes/scheme"
+	rest "github.com/Angus-F/client-go/rest"
 )
 
 // ClusterRoleBindingsGetter has a method to return a ClusterRoleBindingInterface.

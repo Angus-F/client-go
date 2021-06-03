@@ -42,9 +42,9 @@ import (
 	utilclock "k8s.io/apimachinery/pkg/util/clock"
 	"k8s.io/apimachinery/pkg/util/net"
 	"k8s.io/apimachinery/pkg/watch"
-	restclientwatch "k8s.io/client-go/rest/watch"
-	"k8s.io/client-go/tools/metrics"
-	"k8s.io/client-go/util/flowcontrol"
+	restclientwatch "github.com/Angus-F/client-go/rest/watch"
+	"github.com/Angus-F/client-go/tools/metrics"
+	"github.com/Angus-F/client-go/util/flowcontrol"
 	"k8s.io/klog/v2"
 )
 

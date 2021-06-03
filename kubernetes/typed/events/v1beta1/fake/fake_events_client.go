@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	v1beta1 "k8s.io/client-go/kubernetes/typed/events/v1beta1"
-	rest "k8s.io/client-go/rest"
-	testing "k8s.io/client-go/testing"
+	v1beta1 "github.com/Angus-F/client-go/kubernetes/typed/events/v1beta1"
+	rest "github.com/Angus-F/client-go/rest"
+	testing "github.com/Angus-F/client-go/testing"
 )
 
 type FakeEventsV1beta1 struct {

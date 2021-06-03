@@ -29,8 +29,8 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	applyconfigurationscertificatesv1 "k8s.io/client-go/applyconfigurations/certificates/v1"
-	testing "k8s.io/client-go/testing"
+	applyconfigurationscertificatesv1 "github.com/Angus-F/client-go/applyconfigurations/certificates/v1"
+	testing "github.com/Angus-F/client-go/testing"
 )
 
 // FakeCertificateSigningRequests implements CertificateSigningRequestInterface

@@ -20,7 +20,7 @@ package v1beta1
 
 import (
 	v1beta1 "k8s.io/api/policy/v1beta1"
-	v1 "k8s.io/client-go/applyconfigurations/core/v1"
+	v1 "github.com/Angus-F/client-go/applyconfigurations/core/v1"
 )
 
 // SELinuxStrategyOptionsApplyConfiguration represents an declarative configuration of the SELinuxStrategyOptions type for use

@@ -10,5 +10,5 @@ It covers:
 ## Running
 
 ```
-go test -v k8s.io/client-go/examples/fake-client
+go test -v github.com/Angus-F/client-go/examples/fake-client
 ```

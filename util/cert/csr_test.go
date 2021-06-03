@@ -24,7 +24,7 @@ import (
 	"net"
 	"testing"
 
-	"k8s.io/client-go/util/keyutil"
+	"github.com/Angus-F/client-go/util/keyutil"
 )
 
 func TestMakeCSR(t *testing.T) {

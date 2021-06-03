@@ -20,7 +20,7 @@ package v1
 
 import (
 	v1 "k8s.io/api/core/v1"
-	metav1 "k8s.io/client-go/applyconfigurations/meta/v1"
+	metav1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
 )
 
 // TopologySpreadConstraintApplyConfiguration represents an declarative configuration of the TopologySpreadConstraint type for use

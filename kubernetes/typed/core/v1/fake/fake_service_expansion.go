@@ -17,8 +17,8 @@ limitations under the License.
 package fake
 
 import (
-	restclient "k8s.io/client-go/rest"
-	core "k8s.io/client-go/testing"
+	restclient "github.com/Angus-F/client-go/rest"
+	core "github.com/Angus-F/client-go/testing"
 )
 
 func (c *FakeServices) ProxyGet(scheme, name, port, path string, params map[string]string) restclient.ResponseWrapper {

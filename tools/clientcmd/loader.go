@@ -25,16 +25,15 @@ import (
 	goruntime "runtime"
 	"strings"
 
-	"github.com/imdario/mergo"
 	"k8s.io/klog/v2"
 
+	restclient "github.com/Angus-F/client-go/rest"
+	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
+	clientcmdlatest "github.com/Angus-F/client-go/tools/clientcmd/api/latest"
+	"github.com/Angus-F/client-go/util/homedir"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
-	restclient "k8s.io/client-go/rest"
-	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
-	clientcmdlatest "k8s.io/client-go/tools/clientcmd/api/latest"
-	"k8s.io/client-go/util/homedir"
 )
 
 const (

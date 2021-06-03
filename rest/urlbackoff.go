@@ -21,7 +21,7 @@ import (
 	"time"
 
 	"k8s.io/apimachinery/pkg/util/sets"
-	"k8s.io/client-go/util/flowcontrol"
+	"github.com/Angus-F/client-go/util/flowcontrol"
 	"k8s.io/klog/v2"
 )
 
