@@ -28,10 +28,10 @@ import (
 	"k8s.io/apimachinery/pkg/fields"
 	"k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/util/wait"
-	"github.com/Angus-F/client-go/kubernetes"
-	"github.com/Angus-F/client-go/tools/cache"
-	"github.com/Angus-F/client-go/tools/clientcmd"
-	"github.com/Angus-F/client-go/util/workqueue"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/tools/cache"
+	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/util/workqueue"
 )
 
 // Controller demonstrates how to implement a controller with client-go.

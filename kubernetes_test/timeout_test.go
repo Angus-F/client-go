@@ -27,10 +27,10 @@ import (
 
 	appsv1 "k8s.io/api/apps/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"github.com/Angus-F/client-go/kubernetes"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
-	"github.com/Angus-F/client-go/rest"
-	manualfake "github.com/Angus-F/client-go/rest/fake"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/kubernetes/scheme"
+	"k8s.io/client-go/rest"
+	manualfake "k8s.io/client-go/rest/fake"
 )
 
 func TestListTimeout(t *testing.T) {

@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
+	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
 // NetworkPolicyPeerApplyConfiguration represents an declarative configuration of the NetworkPolicyPeer type for use

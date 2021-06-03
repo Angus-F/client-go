@@ -24,9 +24,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	clientauthenticationv1alpha1 "github.com/Angus-F/client-go/pkg/apis/clientauthentication/v1alpha1"
-	clientauthenticationv1beta1 "github.com/Angus-F/client-go/pkg/apis/clientauthentication/v1beta1"
-	"github.com/Angus-F/client-go/rest"
+	clientauthenticationv1alpha1 "k8s.io/client-go/pkg/apis/clientauthentication/v1alpha1"
+	clientauthenticationv1beta1 "k8s.io/client-go/pkg/apis/clientauthentication/v1beta1"
+	"k8s.io/client-go/rest"
 )
 
 // restInfo holds the rest.Client fields that we care about for test assertions.

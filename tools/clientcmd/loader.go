@@ -25,23 +25,24 @@ import (
 	goruntime "runtime"
 	"strings"
 
+	"github.com/imdario/mergo"
 	"k8s.io/klog/v2"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
-	restclient "github.com/Angus-F/client-go/rest"
-	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
-	clientcmdlatest "github.com/Angus-F/client-go/tools/clientcmd/api/latest"
-	"github.com/Angus-F/client-go/util/homedir"
+	restclient "k8s.io/client-go/rest"
+	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
+	clientcmdlatest "k8s.io/client-go/tools/clientcmd/api/latest"
+	"k8s.io/client-go/util/homedir"
 )
 
 const (
 	RecommendedConfigPathFlag   = "kubeconfig"
 	RecommendedConfigPathEnvVar = "KUBECONFIG"
-	RecommendedHomeDir          = ".kube/ConfigsToChoose"
-	RecommendedSchemaName       = "schema"
+	RecommendedHomeDir          = ".kube/ConfigsToChoos"
 	RecommendedFileName         = "UsingConfig"
+	RecommendedSchemaName       = "schema"
 )
 
 var (
@@ -65,7 +66,6 @@ func currentMigrationRules() map[string]string {
 	}
 }
 
-
 type ClientConfigLoader interface {
 	ConfigAccess
 	// IsDefaultConfig returns true if the returned config matches the defaults.
@@ -83,9 +83,6 @@ type ClientConfigGetter struct {
 // ClientConfigGetter implements the ClientConfigLoader interface.
 var _ ClientConfigLoader = &ClientConfigGetter{}
 
-func (g * ClientConfigGetter) SetClusterName(clusterName string) {
-
-}
 func (g *ClientConfigGetter) Load() (*clientcmdapi.Config, error) {
 	return g.kubeconfigGetter()
 }
@@ -136,6 +133,7 @@ type ClientConfigLoadingRules struct {
 
 // ClientConfigLoadingRules implements the ClientConfigLoader interface.
 var _ ClientConfigLoader = &ClientConfigLoadingRules{}
+
 // NewDefaultClientConfigLoadingRules returns a ClientConfigLoadingRules object with default fields filled in.  You are not required to
 // use this constructor
 func NewDefaultClientConfigLoadingRules() *ClientConfigLoadingRules {
@@ -200,7 +198,6 @@ func (rules *ClientConfigLoadingRules) Load() (*clientcmdapi.Config, error) {
 			continue
 		}
 	}
-
 	RealPath := filepath.Join(RecommendedConfigDir, RecommendedFileName)
 	config, err := LoadFromFile(RealPath)
 	if os.IsNotExist(err) {
@@ -337,8 +334,11 @@ func (rules *ClientConfigLoadingRules) IsDefaultConfig(config *restclient.Config
 
 // LoadFromFile takes a filename and deserializes the contents into Config object
 func LoadFromFile(filename string) (*clientcmdapi.Config, error) {
-	KubeConfigBytes, err:= ioutil.ReadFile(filename)
-	config, err := Load(KubeConfigBytes)
+	kubeconfigBytes, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+	config, err := Load(kubeconfigBytes)
 	if err != nil {
 		return nil, err
 	}

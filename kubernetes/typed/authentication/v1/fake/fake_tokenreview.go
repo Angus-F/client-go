@@ -24,7 +24,7 @@ import (
 	v1 "k8s.io/api/authentication/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
-	testing "github.com/Angus-F/client-go/testing"
+	testing "k8s.io/client-go/testing"
 )
 
 // FakeTokenReviews implements TokenReviewInterface

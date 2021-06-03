@@ -30,7 +30,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/diff"
-	"github.com/Angus-F/client-go/rest"
+	"k8s.io/client-go/rest"
 )
 
 func TestClient(t *testing.T) {

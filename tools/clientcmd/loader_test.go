@@ -31,8 +31,8 @@ import (
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/diff"
-	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
-	clientcmdlatest "github.com/Angus-F/client-go/tools/clientcmd/api/latest"
+	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
+	clientcmdlatest "k8s.io/client-go/tools/clientcmd/api/latest"
 )
 
 var (

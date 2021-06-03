@@ -21,7 +21,7 @@ import (
 
 	v1 "k8s.io/api/core/v1"
 	types "k8s.io/apimachinery/pkg/types"
-	core "github.com/Angus-F/client-go/testing"
+	core "k8s.io/client-go/testing"
 )
 
 // TODO: Should take a PatchType as an argument probably.

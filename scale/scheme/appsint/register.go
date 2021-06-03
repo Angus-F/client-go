@@ -20,7 +20,7 @@ import (
 	appsv1beta2 "k8s.io/api/apps/v1beta2"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	scalescheme "github.com/Angus-F/client-go/scale/scheme"
+	scalescheme "k8s.io/client-go/scale/scheme"
 )
 
 // GroupName is the group name use in this package

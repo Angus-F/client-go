@@ -29,19 +29,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"github.com/Angus-F/client-go/dynamic"
-	"github.com/Angus-F/client-go/tools/clientcmd"
-	"github.com/Angus-F/client-go/util/homedir"
-	"github.com/Angus-F/client-go/util/retry"
+	"k8s.io/client-go/dynamic"
+	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/util/homedir"
+	"k8s.io/client-go/util/retry"
 	//
 	// Uncomment to load all auth plugins
-	// _ "github.com/Angus-F/client-go/plugin/pkg/client/auth"
+	// _ "k8s.io/client-go/plugin/pkg/client/auth"
 	//
 	// Or uncomment to load specific auth plugins
-	// _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/azure"
-	// _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/gcp"
-	// _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/oidc"
-	// _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/openstack"
+	// _ "k8s.io/client-go/plugin/pkg/client/auth/azure"
+	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+	// _ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
+	// _ "k8s.io/client-go/plugin/pkg/client/auth/openstack"
 )
 
 func main() {

@@ -31,7 +31,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/serializer"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/watch"
-	"github.com/Angus-F/client-go/rest"
+	"k8s.io/client-go/rest"
 )
 
 var deleteScheme = runtime.NewScheme()

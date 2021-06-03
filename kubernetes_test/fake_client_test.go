@@ -24,8 +24,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"github.com/Angus-F/client-go/kubernetes/fake"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
+	"k8s.io/client-go/kubernetes/fake"
+	"k8s.io/client-go/kubernetes/scheme"
 )
 
 // This test proves that the kube fake client does not return GVKs.  This is consistent with actual client (see tests below)

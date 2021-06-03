@@ -25,7 +25,7 @@ import (
 
 	"k8s.io/klog/v2"
 
-	"github.com/Angus-F/client-go/tools/metrics"
+	"k8s.io/client-go/tools/metrics"
 )
 
 // The following constants shadow the special values used in the prometheus metrics implementation.

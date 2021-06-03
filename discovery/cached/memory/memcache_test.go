@@ -25,7 +25,7 @@ import (
 
 	errorsutil "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"github.com/Angus-F/client-go/discovery/fake"
+	"k8s.io/client-go/discovery/fake"
 )
 
 type resourceMapEntry struct {

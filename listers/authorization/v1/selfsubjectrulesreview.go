@@ -22,7 +22,7 @@ import (
 	v1 "k8s.io/api/authorization/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
-	"github.com/Angus-F/client-go/tools/cache"
+	"k8s.io/client-go/tools/cache"
 )
 
 // SelfSubjectRulesReviewLister helps list SelfSubjectRulesReviews.

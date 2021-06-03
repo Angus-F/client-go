@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// +k8s:conversion-gen=k8s.io/kubernetes/vendor/github.com/Angus-F/client-go/scale/scheme
+// +k8s:conversion-gen=k8s.io/kubernetes/vendor/k8s.io/client-go/scale/scheme
 // +k8s:conversion-gen-external-types=k8s.io/api/apps/v1beta2
 
-package appsv1beta2 // import "github.com/Angus-F/client-go/scale/scheme/appsv1beta2"
+package appsv1beta2 // import "k8s.io/client-go/scale/scheme/appsv1beta2"

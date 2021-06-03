@@ -33,7 +33,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/json"
 	"k8s.io/apimachinery/pkg/util/strategicpatch"
 	"k8s.io/apimachinery/pkg/watch"
-	restclient "github.com/Angus-F/client-go/rest"
+	restclient "k8s.io/client-go/rest"
 )
 
 // ObjectTracker keeps track of objects. It is intended to be used to

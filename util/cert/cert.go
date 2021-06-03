@@ -32,7 +32,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Angus-F/client-go/util/keyutil"
+	"k8s.io/client-go/util/keyutil"
 )
 
 const duration365d = time.Hour * 24 * 365

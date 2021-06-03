@@ -35,7 +35,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/diff"
 	"k8s.io/apimachinery/pkg/util/sets"
 	"k8s.io/apimachinery/pkg/version"
-	restclient "github.com/Angus-F/client-go/rest"
+	restclient "k8s.io/client-go/rest"
 )
 
 func TestGetServerVersion(t *testing.T) {

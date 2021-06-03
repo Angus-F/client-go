@@ -22,7 +22,7 @@ import (
 	v1beta1 "k8s.io/api/apps/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/conversion"
-	scheme "github.com/Angus-F/client-go/scale/scheme"
+	scheme "k8s.io/client-go/scale/scheme"
 )
 
 func Convert_scheme_ScaleStatus_To_v1beta1_ScaleStatus(in *scheme.ScaleStatus, out *v1beta1.ScaleStatus, s conversion.Scope) error {

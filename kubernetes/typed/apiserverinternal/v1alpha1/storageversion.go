@@ -28,9 +28,9 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	apiserverinternalv1alpha1 "github.com/Angus-F/client-go/applyconfigurations/apiserverinternal/v1alpha1"
-	scheme "github.com/Angus-F/client-go/kubernetes/scheme"
-	rest "github.com/Angus-F/client-go/rest"
+	apiserverinternalv1alpha1 "k8s.io/client-go/applyconfigurations/apiserverinternal/v1alpha1"
+	scheme "k8s.io/client-go/kubernetes/scheme"
+	rest "k8s.io/client-go/rest"
 )
 
 // StorageVersionsGetter has a method to return a StorageVersionInterface.

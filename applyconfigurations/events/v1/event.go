@@ -23,9 +23,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	managedfields "k8s.io/apimachinery/pkg/util/managedfields"
-	corev1 "github.com/Angus-F/client-go/applyconfigurations/core/v1"
-	internal "github.com/Angus-F/client-go/applyconfigurations/internal"
-	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
+	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
+	internal "k8s.io/client-go/applyconfigurations/internal"
+	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
 // EventApplyConfiguration represents an declarative configuration of the Event type for use

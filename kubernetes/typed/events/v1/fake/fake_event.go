@@ -29,8 +29,8 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	applyconfigurationseventsv1 "github.com/Angus-F/client-go/applyconfigurations/events/v1"
-	testing "github.com/Angus-F/client-go/testing"
+	applyconfigurationseventsv1 "k8s.io/client-go/applyconfigurations/events/v1"
+	testing "k8s.io/client-go/testing"
 )
 
 // FakeEvents implements EventInterface

@@ -24,7 +24,7 @@ import (
 	"k8s.io/apimachinery/pkg/api/meta"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"github.com/Angus-F/client-go/discovery"
+	"k8s.io/client-go/discovery"
 
 	"k8s.io/klog/v2"
 )

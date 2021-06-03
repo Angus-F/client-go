@@ -29,8 +29,8 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	applyconfigurationsappsv1 "github.com/Angus-F/client-go/applyconfigurations/apps/v1"
-	testing "github.com/Angus-F/client-go/testing"
+	applyconfigurationsappsv1 "k8s.io/client-go/applyconfigurations/apps/v1"
+	testing "k8s.io/client-go/testing"
 )
 
 // FakeControllerRevisions implements ControllerRevisionInterface

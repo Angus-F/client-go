@@ -11,15 +11,15 @@ To enable these plugins in your program, import them in your main package.
 
 You can load all auth plugins:
 ```go
-import _ "github.com/Angus-F/client-go/plugin/pkg/client/auth"
+import _ "k8s.io/client-go/plugin/pkg/client/auth"
 ```
 
 Or you can load specific auth plugins:
 ```go
-import _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/azure"
-import _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/gcp"
-import _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/oidc"
-import _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/openstack"
+import _ "k8s.io/client-go/plugin/pkg/client/auth/azure"
+import _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+import _ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
+import _ "k8s.io/client-go/plugin/pkg/client/auth/openstack"
 ```
 
 ### Configuration
@@ -44,7 +44,7 @@ import _ "github.com/Angus-F/client-go/plugin/pkg/client/auth/openstack"
   the custom resources.
 - [**Leader election**](./leader-election): Demonstrates the use of the leader election package, which can be used to implement HA controllers.
 
-[informer]: https://godoc.org/github.com/Angus-F/client-go/tools/cache#NewInformer
+[informer]: https://godoc.org/k8s.io/client-go/tools/cache#NewInformer
 
 ### Testing
 

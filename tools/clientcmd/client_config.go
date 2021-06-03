@@ -18,21 +18,20 @@ package clientcmd
 
 import (
 	"fmt"
-	"github.com/imdario/mergo"
 	"io"
 	"io/ioutil"
-	"k8s.io/apimachinery/pkg/runtime/schema"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
-	restclient "github.com/Angus-F/client-go/rest"
-	clientauth "github.com/Angus-F/client-go/tools/auth"
-	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
-	"k8s.io/klog/v2"
-
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
 	"unicode"
+
+	restclient "k8s.io/client-go/rest"
+	clientauth "k8s.io/client-go/tools/auth"
+	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
+	"k8s.io/klog/v2"
+
+	"github.com/imdario/mergo"
 )
 
 const (
@@ -113,9 +112,9 @@ func NewClientConfigFromBytes(configBytes []byte) (ClientConfig, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	return &DirectClientConfig{*config, "", &ConfigOverrides{}, nil, nil, promptedCredentials{}}, nil
 }
-
 
 // RESTConfigFromKubeConfig is a convenience method to give back a restconfig from your kubeconfig bytes.
 // For programmatic access, this is what you want 80% of the time
@@ -125,26 +124,6 @@ func RESTConfigFromKubeConfig(configBytes []byte) (*restclient.Config, error) {
 		return nil, err
 	}
 	return clientConfig.ClientConfig()
-}
-
-func RESTConfigFromKubeConfigWithDefaultSet(configBytes []byte) (*restclient.Config, error) {
-	clientConfig, err := RESTConfigFromKubeConfig(configBytes)
-	if err != nil {
-		return nil, err
-	}
-
-	clientConfig.GroupVersion = &schema.GroupVersion{Group: "", Version: "v1"}
-	if clientConfig.APIPath == "" {
-		clientConfig.APIPath = "/api"
-	}
-	if clientConfig.NegotiatedSerializer == nil {
-		clientConfig.NegotiatedSerializer = scheme.Codecs.WithoutConversion()
-	}
-	err = restclient.SetKubernetesDefaults(clientConfig)
-	if err != nil {
-		return nil, err
-	}
-	return clientConfig, nil
 }
 
 func (config *DirectClientConfig) RawConfig() (clientcmdapi.Config, error) {
@@ -387,13 +366,16 @@ func (config *DirectClientConfig) Namespace() (string, bool, error) {
 		// --namespace flag honored instead of being ignored.
 		return config.overrides.Context.Namespace, true, nil
 	}
+
 	if err := config.ConfirmUsable(); err != nil {
 		return "", false, err
 	}
+
 	configContext, err := config.getContext()
 	if err != nil {
 		return "", false, err
 	}
+
 	if len(configContext.Namespace) == 0 {
 		return "default", false, nil
 	}
@@ -651,75 +633,3 @@ func BuildConfigFromKubeconfigGetter(masterUrl string, kubeconfigGetter Kubeconf
 		&ConfigOverrides{ClusterInfo: clientcmdapi.Cluster{Server: masterUrl}})
 	return cc.ClientConfig()
 }
-
-/**
-func NewClientConfigFromBytesWithConfigFlags(configBytes []byte, f cmdutil.Factory) (ClientConfig, error) {
-	config, err := Load(configBytes)
-	if err != nil {
-		return nil, err
-	}
-
-	configflags := f.GetConfigFlags()
-	overrides := &ConfigOverrides{ClusterDefaults: ClusterDefaults}
-
-	// bind auth info flag values to overrides
-	if configflags.CertFile != nil {
-		overrides.AuthInfo.ClientCertificate = *f.CertFile
-	}
-	if configflags.KeyFile != nil {
-		overrides.AuthInfo.ClientKey = *f.KeyFile
-	}
-	if configflags.BearerToken != nil {
-		overrides.AuthInfo.Token = *f.BearerToken
-	}
-	if configflags.Impersonate != nil {
-		overrides.AuthInfo.Impersonate = *f.Impersonate
-	}
-	if configflags.ImpersonateGroup != nil {
-		overrides.AuthInfo.ImpersonateGroups = *f.ImpersonateGroup
-	}
-	if configflags.Username != nil {
-		overrides.AuthInfo.Username = *f.Username
-	}
-	if configflags.Password != nil {
-		overrides.AuthInfo.Password = *f.Password
-	}
-
-	// bind cluster flags
-	if configflags.APIServer != nil {
-		overrides.ClusterInfo.Server = *f.APIServer
-	}
-	if configflags.TLSServerName != nil {
-		overrides.ClusterInfo.TLSServerName = *f.TLSServerName
-	}
-	if configflags.CAFile != nil {
-		overrides.ClusterInfo.CertificateAuthority = *f.CAFile
-	}
-	if configflags.Insecure != nil {
-		overrides.ClusterInfo.InsecureSkipTLSVerify = *f.Insecure
-	}
-
-	// bind context flags
-	if configflags.Context != nil {
-		overrides.CurrentContext = *f.Context
-	}
-	if configflags.ClusterName != nil {
-		overrides.Context.Cluster = *f.ClusterName
-	}
-	if configflags.AuthInfoName != nil {
-		overrides.Context.AuthInfo = *f.AuthInfoName
-	}
-	if configflags.Namespace != nil {
-		overrides.Context.Namespace = *f.Namespace
-	}
-
-	if configflags.Timeout != nil {
-		overrides.Timeout = *f.Timeout
-	}
-
-	return &DirectClientConfig{*config, "", overrides, nil, nil, promptedCredentials{} }, nil
-}
-
-
-
-*/

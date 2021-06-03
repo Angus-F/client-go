@@ -19,7 +19,7 @@ package metadatainformer
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"github.com/Angus-F/client-go/informers"
+	"k8s.io/client-go/informers"
 )
 
 // SharedInformerFactory provides access to a shared informer and lister for dynamic client

@@ -21,8 +21,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/Angus-F/client-go/pkg/apis/clientauthentication"
-	clientauthenticationapi "github.com/Angus-F/client-go/pkg/apis/clientauthentication"
+	"k8s.io/client-go/pkg/apis/clientauthentication"
+	clientauthenticationapi "k8s.io/client-go/pkg/apis/clientauthentication"
 )
 
 // This file contains Config logic related to exec credential plugins.

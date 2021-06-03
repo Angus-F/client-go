@@ -26,10 +26,10 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
-	internalinterfaces "github.com/Angus-F/client-go/informers/internalinterfaces"
-	kubernetes "github.com/Angus-F/client-go/kubernetes"
-	v2beta2 "github.com/Angus-F/client-go/listers/autoscaling/v2beta2"
-	cache "github.com/Angus-F/client-go/tools/cache"
+	internalinterfaces "k8s.io/client-go/informers/internalinterfaces"
+	kubernetes "k8s.io/client-go/kubernetes"
+	v2beta2 "k8s.io/client-go/listers/autoscaling/v2beta2"
+	cache "k8s.io/client-go/tools/cache"
 )
 
 // HorizontalPodAutoscalerInformer provides access to a shared informer and lister for

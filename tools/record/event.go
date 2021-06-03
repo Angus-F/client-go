@@ -28,9 +28,9 @@ import (
 	"k8s.io/apimachinery/pkg/util/clock"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/apimachinery/pkg/watch"
-	restclient "github.com/Angus-F/client-go/rest"
-	"github.com/Angus-F/client-go/tools/record/util"
-	ref "github.com/Angus-F/client-go/tools/reference"
+	restclient "k8s.io/client-go/rest"
+	"k8s.io/client-go/tools/record/util"
+	ref "k8s.io/client-go/tools/reference"
 	"k8s.io/klog/v2"
 )
 
@@ -133,14 +133,14 @@ type EventBroadcaster interface {
 	Shutdown()
 }
 
-// EventRecorderAdapter is a wrapper around a "github.com/Angus-F/client-go/tools/record".EventRecorder
-// implementing the new "github.com/Angus-F/client-go/tools/events".EventRecorder interface.
+// EventRecorderAdapter is a wrapper around a "k8s.io/client-go/tools/record".EventRecorder
+// implementing the new "k8s.io/client-go/tools/events".EventRecorder interface.
 type EventRecorderAdapter struct {
 	recorder EventRecorder
 }
 
 // NewEventRecorderAdapter returns an adapter implementing the new
-// "github.com/Angus-F/client-go/tools/events".EventRecorder interface.
+// "k8s.io/client-go/tools/events".EventRecorder interface.
 func NewEventRecorderAdapter(recorder EventRecorder) *EventRecorderAdapter {
 	return &EventRecorderAdapter{
 		recorder: recorder,

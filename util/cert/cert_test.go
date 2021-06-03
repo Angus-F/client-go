@@ -21,7 +21,7 @@ import (
 	"crypto/rsa"
 	"testing"
 
-	"github.com/Angus-F/client-go/util/cert"
+	"k8s.io/client-go/util/cert"
 )
 
 const COMMON_NAME = "foo.example.com"

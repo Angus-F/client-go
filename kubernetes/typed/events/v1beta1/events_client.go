@@ -20,8 +20,8 @@ package v1beta1
 
 import (
 	v1beta1 "k8s.io/api/events/v1beta1"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
-	rest "github.com/Angus-F/client-go/rest"
+	"k8s.io/client-go/kubernetes/scheme"
+	rest "k8s.io/client-go/rest"
 )
 
 type EventsV1beta1Interface interface {

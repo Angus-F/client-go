@@ -31,9 +31,9 @@ import (
 	k8sruntime "k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/clock"
 	"k8s.io/apimachinery/pkg/util/strategicpatch"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
-	restclient "github.com/Angus-F/client-go/rest"
-	ref "github.com/Angus-F/client-go/tools/reference"
+	"k8s.io/client-go/kubernetes/scheme"
+	restclient "k8s.io/client-go/rest"
+	ref "k8s.io/client-go/tools/reference"
 )
 
 type testEventSink struct {

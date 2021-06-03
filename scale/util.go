@@ -26,14 +26,14 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	serializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
-	"github.com/Angus-F/client-go/discovery"
-	scalescheme "github.com/Angus-F/client-go/scale/scheme"
-	scaleappsint "github.com/Angus-F/client-go/scale/scheme/appsint"
-	scaleappsv1beta1 "github.com/Angus-F/client-go/scale/scheme/appsv1beta1"
-	scaleappsv1beta2 "github.com/Angus-F/client-go/scale/scheme/appsv1beta2"
-	scaleautoscaling "github.com/Angus-F/client-go/scale/scheme/autoscalingv1"
-	scaleextint "github.com/Angus-F/client-go/scale/scheme/extensionsint"
-	scaleext "github.com/Angus-F/client-go/scale/scheme/extensionsv1beta1"
+	"k8s.io/client-go/discovery"
+	scalescheme "k8s.io/client-go/scale/scheme"
+	scaleappsint "k8s.io/client-go/scale/scheme/appsint"
+	scaleappsv1beta1 "k8s.io/client-go/scale/scheme/appsv1beta1"
+	scaleappsv1beta2 "k8s.io/client-go/scale/scheme/appsv1beta2"
+	scaleautoscaling "k8s.io/client-go/scale/scheme/autoscalingv1"
+	scaleextint "k8s.io/client-go/scale/scheme/extensionsint"
+	scaleext "k8s.io/client-go/scale/scheme/extensionsv1beta1"
 )
 
 // PreferredResourceMapper determines the preferred version of a resource to scale

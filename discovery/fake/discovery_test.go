@@ -20,8 +20,8 @@ import (
 	"testing"
 
 	"k8s.io/apimachinery/pkg/version"
-	fakediscovery "github.com/Angus-F/client-go/discovery/fake"
-	fakeclientset "github.com/Angus-F/client-go/kubernetes/fake"
+	fakediscovery "k8s.io/client-go/discovery/fake"
+	fakeclientset "k8s.io/client-go/kubernetes/fake"
 )
 
 func TestFakingServerVersion(t *testing.T) {

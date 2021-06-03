@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	metav1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
+	metav1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
 // ServiceStatusApplyConfiguration represents an declarative configuration of the ServiceStatus type for use

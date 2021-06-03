@@ -20,7 +20,7 @@ package v1beta1
 
 import (
 	intstr "k8s.io/apimachinery/pkg/util/intstr"
-	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
+	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
 // PodDisruptionBudgetSpecApplyConfiguration represents an declarative configuration of the PodDisruptionBudgetSpec type for use

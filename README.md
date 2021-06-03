@@ -5,13 +5,13 @@ Go clients for talking to a [kubernetes](http://kubernetes.io/) cluster.
 We recommend using the `v0.x.y` tags for Kubernetes releases >= `v1.17.0` and
 `kubernetes-1.x.y` tags for Kubernetes releases < `v1.17.0`.
 
-The fastest way to add this library to a project is to run `go get github.com/Angus-F/client-go@latest` with go1.16+.
+The fastest way to add this library to a project is to run `go get k8s.io/client-go@latest` with go1.16+.
 See [INSTALL.md](/INSTALL.md) for detailed installation instructions and troubleshooting.
 
 [![GoDocWidget]][GoDocReference]
 
-[GoDocWidget]: https://godoc.org/github.com/Angus-F/client-go?status.svg
-[GoDocReference]:https://godoc.org/github.com/Angus-F/client-go 
+[GoDocWidget]: https://godoc.org/k8s.io/client-go?status.svg
+[GoDocReference]:https://godoc.org/k8s.io/client-go 
 
 ## Table of Contents
 
@@ -147,7 +147,7 @@ existing users won't be broken.
 ### Kubernetes tags
 
 This repository is still a mirror of
-[k8s.io/kubernetes/staging/src/client-go](https://github.com/kubernetes/kubernetes/tree/master/staging/src/github.com/Angus-F/client-go),
+[k8s.io/kubernetes/staging/src/client-go](https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/client-go),
 the code development is still done in the staging area.
 
 Since Kubernetes `v1.8.0`, when syncing the code from the staging area,
@@ -157,7 +157,7 @@ we also sync the Kubernetes version tags to client-go, prefixed with
 
 For example, if you check out the `kubernetes-1.17.0` or the `v0.17.0` tag in
 client-go, the code you get is exactly the same as if you check out the `v1.17.0`
-tag in Kubernetes, and change directory to `staging/src/github.com/Angus-F/client-go`.
+tag in Kubernetes, and change directory to `staging/src/k8s.io/client-go`.
 
 The purpose is to let users quickly find matching commits among published repos,
 like [sample-apiserver](https://github.com/kubernetes/sample-apiserver),
@@ -171,13 +171,13 @@ you care about backwards compatibility.
 To get the latest version, use go1.16+ and fetch using the `go get` command. For example:
 
 ```
-go get github.com/Angus-F/client-go@latest
+go get k8s.io/client-go@latest
 ```
 
 To get a specific version, use go1.11+ and fetch the desired version using the `go get` command. For example:
 
 ```
-go get github.com/Angus-F/client-go@v0.20.4
+go get k8s.io/client-go@v0.20.4
 ```
 
 See [INSTALL.md](/INSTALL.md) for detailed instructions and troubleshooting.

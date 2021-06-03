@@ -16,4 +16,4 @@ limitations under the License.
 
 // Package discovery provides ways to discover server-supported
 // API groups, versions and resources.
-package discovery // import "github.com/Angus-F/client-go/discovery"
+package discovery // import "k8s.io/client-go/discovery"

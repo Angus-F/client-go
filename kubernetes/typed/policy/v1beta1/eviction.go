@@ -19,7 +19,7 @@ limitations under the License.
 package v1beta1
 
 import (
-	rest "github.com/Angus-F/client-go/rest"
+	rest "k8s.io/client-go/rest"
 )
 
 // EvictionsGetter has a method to return a EvictionInterface.

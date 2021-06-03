@@ -19,9 +19,9 @@ limitations under the License.
 package flowcontrol
 
 import (
-	v1alpha1 "github.com/Angus-F/client-go/informers/flowcontrol/v1alpha1"
-	v1beta1 "github.com/Angus-F/client-go/informers/flowcontrol/v1beta1"
-	internalinterfaces "github.com/Angus-F/client-go/informers/internalinterfaces"
+	v1alpha1 "k8s.io/client-go/informers/flowcontrol/v1alpha1"
+	v1beta1 "k8s.io/client-go/informers/flowcontrol/v1beta1"
+	internalinterfaces "k8s.io/client-go/informers/internalinterfaces"
 )
 
 // Interface provides access to each of this group's versions.

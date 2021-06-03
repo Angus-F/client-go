@@ -20,7 +20,7 @@ package v2beta1
 
 import (
 	resource "k8s.io/apimachinery/pkg/api/resource"
-	v1 "github.com/Angus-F/client-go/applyconfigurations/meta/v1"
+	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
 // ObjectMetricSourceApplyConfiguration represents an declarative configuration of the ObjectMetricSource type for use

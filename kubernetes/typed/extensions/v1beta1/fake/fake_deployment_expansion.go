@@ -21,7 +21,7 @@ import (
 
 	"k8s.io/api/extensions/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	core "github.com/Angus-F/client-go/testing"
+	core "k8s.io/client-go/testing"
 )
 
 func (c *FakeDeployments) Rollback(ctx context.Context, deploymentRollback *v1beta1.DeploymentRollback, opts metav1.CreateOptions) error {

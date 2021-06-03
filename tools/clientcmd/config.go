@@ -18,17 +18,16 @@ package clientcmd
 
 import (
 	"errors"
-	"fmt"
-	"io/ioutil"
-	"k8s.io/klog/v2"
 	"os"
 	"path"
 	"path/filepath"
 	"reflect"
 	"sort"
 
-	restclient "github.com/Angus-F/client-go/rest"
-	clientcmdapi "github.com/Angus-F/client-go/tools/clientcmd/api"
+	"k8s.io/klog/v2"
+
+	restclient "k8s.io/client-go/rest"
+	clientcmdapi "k8s.io/client-go/tools/clientcmd/api"
 )
 
 // ConfigAccess is used by subcommands and methods in this package to load and modify the appropriate config files
@@ -55,6 +54,7 @@ type PathOptions struct {
 
 	// GlobalFileSubpath is an optional value used for displaying help
 	GlobalFileSubpath string
+
 	LoadingRules *ClientConfigLoadingRules
 }
 
@@ -82,7 +82,6 @@ func (o *PathOptions) GetEnvVarFiles() []string {
 	return deduplicate(fileList)
 }
 
-
 func (o *PathOptions) GetLoadingPrecedence() []string {
 	if o.IsExplicitFile() {
 		return []string{o.GetExplicitFile()}
@@ -91,7 +90,6 @@ func (o *PathOptions) GetLoadingPrecedence() []string {
 	if envVarFiles := o.GetEnvVarFiles(); len(envVarFiles) > 0 {
 		return envVarFiles
 	}
-
 	return []string{o.GlobalFile}
 }
 
@@ -137,11 +135,7 @@ func (o *PathOptions) GetDefaultFilename() string {
 }
 
 func (o *PathOptions) IsExplicitFile() bool {
-	if len(o.LoadingRules.ExplicitPath) > 0 {
-		return true
-	}
-
-	return false
+	return len(o.LoadingRules.ExplicitPath) > 0
 }
 
 func (o *PathOptions) GetExplicitFile() string {
@@ -150,7 +144,7 @@ func (o *PathOptions) GetExplicitFile() string {
 
 func NewDefaultPathOptions() *PathOptions {
 	ret := &PathOptions{
-		GlobalFile:       RecommendedFileName,
+		GlobalFile:       RecommendedHomeFile,
 		EnvVar:           RecommendedConfigPathEnvVar,
 		ExplicitFileFlag: RecommendedConfigPathFlag,
 
@@ -485,8 +479,7 @@ func writePreferences(configAccess ConfigAccess, newPrefs clientcmdapi.Preferenc
 
 // getConfigFromFile tries to read a kubeconfig file and if it can't, returns an error.  One exception, missing files result in empty configs, not an error.
 func getConfigFromFile(filename string) (*clientcmdapi.Config, error) {
-	RealPath := filepath.Join(RecommendedConfigDir, filename)
-	config, err := LoadFromFile(RealPath)
+	config, err := LoadFromFile(filename)
 	if err != nil && !os.IsNotExist(err) {
 		return nil, err
 	}
@@ -504,20 +497,4 @@ func GetConfigFromFileOrDie(filename string) *clientcmdapi.Config {
 	}
 
 	return config
-}
-
-func GetAllFile(pathname string, s []string) ([]string, error) {
-	rd, err := ioutil.ReadDir(pathname)
-	if err != nil {
-		fmt.Println("read dir fail:", err)
-		return s, err
-	}
-
-	for _, fi := range rd {
-		if !fi.IsDir() {
-			fullName := pathname + "/" + fi.Name()
-			s = append(s, fullName)
-		}
-	}
-	return s, nil
 }

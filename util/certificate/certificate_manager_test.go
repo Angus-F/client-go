@@ -34,10 +34,10 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	watch "k8s.io/apimachinery/pkg/watch"
-	clientset "github.com/Angus-F/client-go/kubernetes"
-	"github.com/Angus-F/client-go/kubernetes/fake"
-	certificatesclient "github.com/Angus-F/client-go/kubernetes/typed/certificates/v1beta1"
-	clienttesting "github.com/Angus-F/client-go/testing"
+	clientset "k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/kubernetes/fake"
+	certificatesclient "k8s.io/client-go/kubernetes/typed/certificates/v1beta1"
+	clienttesting "k8s.io/client-go/testing"
 )
 
 var storeCertData = newCertificateData(`-----BEGIN CERTIFICATE-----

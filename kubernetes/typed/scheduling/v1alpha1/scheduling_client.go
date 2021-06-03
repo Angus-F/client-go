@@ -20,8 +20,8 @@ package v1alpha1
 
 import (
 	v1alpha1 "k8s.io/api/scheduling/v1alpha1"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
-	rest "github.com/Angus-F/client-go/rest"
+	"k8s.io/client-go/kubernetes/scheme"
+	rest "k8s.io/client-go/rest"
 )
 
 type SchedulingV1alpha1Interface interface {

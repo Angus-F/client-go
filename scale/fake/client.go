@@ -26,8 +26,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/types"
-	"github.com/Angus-F/client-go/scale"
-	"github.com/Angus-F/client-go/testing"
+	"k8s.io/client-go/scale"
+	"k8s.io/client-go/testing"
 )
 
 // FakeScaleClient provides a fake implementation of scale.ScalesGetter.

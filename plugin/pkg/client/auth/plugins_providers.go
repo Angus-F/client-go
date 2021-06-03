@@ -20,7 +20,7 @@ package auth
 
 import (
 	// Initialize client auth plugins for cloud providers.
-	_ "github.com/Angus-F/client-go/plugin/pkg/client/auth/azure"
-	_ "github.com/Angus-F/client-go/plugin/pkg/client/auth/gcp"
-	_ "github.com/Angus-F/client-go/plugin/pkg/client/auth/openstack"
+	_ "k8s.io/client-go/plugin/pkg/client/auth/azure"
+	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+	_ "k8s.io/client-go/plugin/pkg/client/auth/openstack"
 )

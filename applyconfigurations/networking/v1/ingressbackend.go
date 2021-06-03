@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	corev1 "github.com/Angus-F/client-go/applyconfigurations/core/v1"
+	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
 )
 
 // IngressBackendApplyConfiguration represents an declarative configuration of the IngressBackend type for use

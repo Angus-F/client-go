@@ -21,9 +21,9 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/Angus-F/client-go/pkg/apis/clientauthentication"
-	"github.com/Angus-F/client-go/plugin/pkg/client/auth/exec"
-	"github.com/Angus-F/client-go/transport"
+	"k8s.io/client-go/pkg/apis/clientauthentication"
+	"k8s.io/client-go/plugin/pkg/client/auth/exec"
+	"k8s.io/client-go/transport"
 )
 
 // TLSConfigFor returns a tls.Config that will provide the transport level security defined

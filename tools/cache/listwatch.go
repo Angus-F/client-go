@@ -23,7 +23,7 @@ import (
 	"k8s.io/apimachinery/pkg/fields"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
-	restclient "github.com/Angus-F/client-go/rest"
+	restclient "k8s.io/client-go/rest"
 )
 
 // Lister is any object that knows how to perform an initial list.

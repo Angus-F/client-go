@@ -21,7 +21,7 @@ import (
 
 	policy "k8s.io/api/policy/v1beta1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	core "github.com/Angus-F/client-go/testing"
+	core "k8s.io/client-go/testing"
 )
 
 func (c *FakeEvictions) Evict(ctx context.Context, eviction *policy.Eviction) error {

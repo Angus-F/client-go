@@ -31,8 +31,8 @@ import (
 	"golang.org/x/oauth2/google"
 	"k8s.io/apimachinery/pkg/util/net"
 	"k8s.io/apimachinery/pkg/util/yaml"
-	restclient "github.com/Angus-F/client-go/rest"
-	"github.com/Angus-F/client-go/util/jsonpath"
+	restclient "k8s.io/client-go/rest"
+	"k8s.io/client-go/util/jsonpath"
 	"k8s.io/klog/v2"
 )
 

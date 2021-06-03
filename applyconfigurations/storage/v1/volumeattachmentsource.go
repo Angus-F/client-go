@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/Angus-F/client-go/applyconfigurations/core/v1"
+	v1 "k8s.io/client-go/applyconfigurations/core/v1"
 )
 
 // VolumeAttachmentSourceApplyConfiguration represents an declarative configuration of the VolumeAttachmentSource type for use

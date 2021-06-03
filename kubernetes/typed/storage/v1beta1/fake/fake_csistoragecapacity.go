@@ -29,8 +29,8 @@ import (
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
-	storagev1beta1 "github.com/Angus-F/client-go/applyconfigurations/storage/v1beta1"
-	testing "github.com/Angus-F/client-go/testing"
+	storagev1beta1 "k8s.io/client-go/applyconfigurations/storage/v1beta1"
+	testing "k8s.io/client-go/testing"
 )
 
 // FakeCSIStorageCapacities implements CSIStorageCapacityInterface

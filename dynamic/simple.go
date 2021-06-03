@@ -27,7 +27,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/watch"
-	"github.com/Angus-F/client-go/rest"
+	"k8s.io/client-go/rest"
 )
 
 type dynamicClient struct {

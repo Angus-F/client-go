@@ -16,4 +16,4 @@ limitations under the License.
 
 // This file exists to enforce this clientset's vanity import path.
 
-package kubernetes // import "github.com/Angus-F/client-go/kubernetes"
+package kubernetes // import "k8s.io/client-go/kubernetes"

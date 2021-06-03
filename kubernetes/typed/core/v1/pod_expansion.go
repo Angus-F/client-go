@@ -24,8 +24,8 @@ import (
 	policyv1beta1 "k8s.io/api/policy/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/net"
-	"github.com/Angus-F/client-go/kubernetes/scheme"
-	restclient "github.com/Angus-F/client-go/rest"
+	"k8s.io/client-go/kubernetes/scheme"
+	restclient "k8s.io/client-go/rest"
 )
 
 // The PodExpansion interface allows manually adding extra methods to the PodInterface.
