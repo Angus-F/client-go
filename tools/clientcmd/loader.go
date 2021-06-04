@@ -39,7 +39,7 @@ import (
 const (
 	RecommendedConfigPathFlag   = "kubeconfig"
 	RecommendedConfigPathEnvVar = "KUBECONFIG"
-	RecommendedHomeDir          = ".kube/ConfigsToChoos"
+	RecommendedHomeDir          = ".kube/ConfigsToChoose"
 	RecommendedFileName         = "UsingConfig"
 	RecommendedSchemaName       = "schema"
 )
