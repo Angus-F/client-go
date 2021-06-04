@@ -18,8 +18,6 @@ package clientcmd
 
 import (
 	"errors"
-	"fmt"
-	"io/ioutil"
 	"k8s.io/klog/v2"
 	"os"
 	"path"
@@ -504,20 +502,4 @@ func GetConfigFromFileOrDie(filename string) *clientcmdapi.Config {
 	}
 
 	return config
-}
-
-func GetAllFile(pathname string, s []string) ([]string, error) {
-	rd, err := ioutil.ReadDir(pathname)
-	if err != nil {
-		fmt.Println("read dir fail:", err)
-		return s, err
-	}
-
-	for _, fi := range rd {
-		if !fi.IsDir() {
-			fullName := pathname + "/" + fi.Name()
-			s = append(s, fullName)
-		}
-	}
-	return s, nil
 }
